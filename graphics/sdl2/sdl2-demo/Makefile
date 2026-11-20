@@ -7,7 +7,7 @@ $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/de
 endif
 
 TOPDIR ?= $(CURDIR)
-include $(DEVKITPRO)/libnx/switch_rules
+include $(DEVKITPRO)/libounce/switch2_rules
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -50,7 +50,7 @@ APP_AUTHOR  := carstene1ns
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
+ARCH	:=	$(SWITCH2_CPU) -mtp=soft -fPIE
 
 CFLAGS	:=	`$(PREFIX)pkg-config --cflags sdl2 SDL2_mixer SDL2_image` -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES)
@@ -60,7 +60,7 @@ CFLAGS	+=	$(INCLUDE) -D__SWITCH__
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
 ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+LDFLAGS	=	-specs=$(DEVKITPRO)/libounce/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
 LIBS	:=	`$(PREFIX)pkg-config --libs sdl2 SDL2_mixer SDL2_image SDL2_ttf` \
 			-lnx

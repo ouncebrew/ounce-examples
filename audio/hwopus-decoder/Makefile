@@ -7,7 +7,7 @@ $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/de
 endif
 
 TOPDIR ?= $(CURDIR)
-include $(DEVKITPRO)/libnx/switch_rules
+include $(DEVKITPRO)/libounce/switch2_rules
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
@@ -47,7 +47,7 @@ INCLUDES	:=	include
 #---------------------------------------------------------------------------------
 # options for code generation
 #---------------------------------------------------------------------------------
-ARCH	:=	-march=armv8-a+crc+crypto -mtune=cortex-a57 -mtp=soft -fPIE
+ARCH	:=	$(SWITCH2_CPU) -mtp=soft -fPIE
 
 CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
 			$(ARCH) $(DEFINES)
@@ -57,7 +57,7 @@ CFLAGS	+=	$(INCLUDE) -D__SWITCH__ `aarch64-none-elf-pkg-config --cflags opusfile
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
 ASFLAGS	:=	-g $(ARCH)
-LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
+LDFLAGS	=	-specs=$(DEVKITPRO)/libounce/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*.map)
 
 LIBS	:= -lnx `aarch64-none-elf-pkg-config --libs opusfile`
 

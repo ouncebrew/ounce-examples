@@ -6,7 +6,7 @@ ifeq ($(strip $(DEVKITPRO)),)
 $(error "Please set DEVKITPRO in your environment. export DEVKITPRO=<path to>/devkitpro")
 endif
 
-include $(DEVKITPRO)/libnx/switch_rules
+include $(DEVKITPRO)/libounce/switch2_rules
 
 #---------------------------------------------------------------------------------
 # TARGET is the name of the output
