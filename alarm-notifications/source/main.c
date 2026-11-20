@@ -4,10 +4,10 @@
 #include <string.h>
 #include <time.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// This example shows how to use Alarm Notifications, see libnx notif.h.
+// This example shows how to use Alarm Notifications, see libounce notif.h.
 // This must be run under a host Application. To avoid conflicts with official apps, normally you should not run under a host Application where the official Application also uses Alarm Notifications.
 
 // Parse the ApplicationParameter and verify that it belongs to the current hb app. You can store any data you want in the ApplicationParameter.
@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
 {
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -67,7 +67,7 @@ int main(int argc, char* argv[])
     rc = notifInitialize(NotifServiceType_Application);
     if (R_FAILED(rc)) printf("notifInitialize(): 0x%x\n", rc);
 
-    if (R_SUCCEEDED(rc)) { // Some official apps don't use this. See libnx notif.h for this.
+    if (R_SUCCEEDED(rc)) { // Some official apps don't use this. See libounce notif.h for this.
         rc = notifGetNotificationSystemEvent(&alarmevent);
         printf("notifGetNotificationSystemEvent(): 0x%x\n", rc);
     }
@@ -92,7 +92,7 @@ int main(int argc, char* argv[])
         if (kDown & HidNpadButton_Plus)
             break; // break in order to return to hbmenu
 
-        if (R_SUCCEEDED(rc) && R_SUCCEEDED(eventWait(&alarmevent, 0))) { // Some official apps don't use this. See libnx notif.h for this.
+        if (R_SUCCEEDED(rc) && R_SUCCEEDED(eventWait(&alarmevent, 0))) { // Some official apps don't use this. See libounce notif.h for this.
             u64 out_size=0;
             memset(outdata, 0, sizeof(outdata));
             rc = notifTryPopNotifiedApplicationParameter(outdata, sizeof(outdata)-1, &out_size);
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
         if (R_SUCCEEDED(rc)) {
             if (kDown & HidNpadButton_A) {
                 // Setup an alarm with {current local-time} + {2 minutes}. You can use any weekday/time you want.
-                // See libnx notif.h for more notifAlarmSetting*() funcs.
+                // See libounce notif.h for more notifAlarmSetting*() funcs.
 
                 notifAlarmSettingCreate(&alarm_setting);
 

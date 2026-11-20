@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// This example shows how to use VrMode, see also libnx applet.h and pctl.h.
+// This example shows how to use VrMode, see also libounce applet.h and pctl.h.
 // TODO: This needs replaced with GL rendering, to handle the special VrMode rendering.
 
 // When running on pre-7.0.0, hbl has to run under the labo-vr application for the host application.
@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);

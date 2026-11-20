@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
 #include <curl/curl.h>
@@ -20,7 +20,7 @@ void network_request(void) {
     curl = curl_easy_init();
     if (curl) {
         curl_easy_setopt(curl, CURLOPT_URL, "https://example.com/");
-        curl_easy_setopt(curl, CURLOPT_USERAGENT, "libnx curl example/1.0");
+        curl_easy_setopt(curl, CURLOPT_USERAGENT, "libounce curl example/1.0");
         // Add any other options here.
 
         printf("curl_easy_perform\n");
@@ -43,7 +43,7 @@ int main(int argc, char* argv[])
 {
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);

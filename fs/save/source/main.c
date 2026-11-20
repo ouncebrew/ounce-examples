@@ -13,7 +13,7 @@ Result get_save(u64 *application_id, AccountUid *uid) {
     FsSaveDataInfo info;
     bool found=0;
 
-    rc = fsOpenSaveDataInfoReader(&reader, FsSaveDataSpaceId_User);//See libnx fs.h.
+    rc = fsOpenSaveDataInfoReader(&reader, FsSaveDataSpaceId_User);//See libounce fs.h.
     if (R_FAILED(rc)) {
         printf("fsOpenSaveDataInfoReader() failed: 0x%x\n", rc);
         return rc;
@@ -21,7 +21,7 @@ Result get_save(u64 *application_id, AccountUid *uid) {
 
     //Find the first savedata with FsSaveDataType_SaveData.
     while(1) {
-        rc = fsSaveDataInfoReaderRead(&reader, &info, 1, &total_entries);//See libnx fs.h.
+        rc = fsSaveDataInfoReaderRead(&reader, &info, 1, &total_entries);//See libounce fs.h.
         if (R_FAILED(rc) || total_entries==0) break;
 
         if (info.save_data_type == FsSaveDataType_Account) {//Filter by FsSaveDataType_Account, however note that FsSaveDataSpaceId_User can have non-FsSaveDataType_Account.
@@ -85,7 +85,7 @@ int main(int argc, char **argv)
 
     //You can use any device-name. If you want multiple saves mounted at the same time, you must use different device-names for each one.
     if (R_SUCCEEDED(rc)) {
-        rc = fsdevMountSaveData("save", application_id, uid);//See also libnx fs.h/fs_dev.h
+        rc = fsdevMountSaveData("save", application_id, uid);//See also libounce fs.h/fs_dev.h
         if (R_FAILED(rc)) {
             printf("fsdevMountSaveData() failed: 0x%x\n", rc);
         }
@@ -93,7 +93,7 @@ int main(int argc, char **argv)
 
     //At this point you can use the mounted device with standard stdio.
     //After modifying savedata, in order for the changes to take affect you must use: rc = fsdevCommitDevice("save");
-    //See also libnx fs_dev.h for fsdevCommitDevice.
+    //See also libounce fs_dev.h for fsdevCommitDevice.
 
     if (R_SUCCEEDED(rc)) {
         dir = opendir("save:/");//Open the "save:/" directory.

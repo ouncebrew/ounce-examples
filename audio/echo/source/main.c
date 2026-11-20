@@ -6,8 +6,8 @@
 #include <switch.h>
 
 // Example for audio capture and playback.
-// This example continuously records audio data from the default input device (see libnx audin.h),
-// and sends it to the default audio output device (see libnx audout.h).
+// This example continuously records audio data from the default input device (see libounce audin.h),
+// and sends it to the default audio output device (see libounce audout.h).
 
 #define SAMPLERATE 48000
 #define CHANNELCOUNT 2

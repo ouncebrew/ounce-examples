@@ -3,10 +3,10 @@
 #include <string.h>
 #include <stdarg.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// Joy-Con IR-sensor example, displays the image from the IR camera. See also libnx irs.h.
+// Joy-Con IR-sensor example, displays the image from the IR camera. See also libounce irs.h.
 
 // Define the desired framebuffer resolution (here we set it to 720p).
 #define FB_WIDTH  1280

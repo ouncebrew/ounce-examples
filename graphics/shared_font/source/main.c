@@ -7,7 +7,7 @@
 #include <ft2build.h>
 #include FT_FREETYPE_H
 
-//See also libnx pl.h.
+//See also libounce pl.h.
 
 // Define the desired framebuffer resolution (here we set it to 720p).
 #define FB_WIDTH  1280

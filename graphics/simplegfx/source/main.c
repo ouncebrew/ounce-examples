@@ -3,14 +3,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
 #ifdef DISPLAY_IMAGE
 #include "image_bin.h"//Your own raw RGB888 1280x720 image at "data/image.bin" is required.
 #endif
 
-// See also libnx display/framebuffer.h.
+// See also libounce display/framebuffer.h.
 
 // Define the desired framebuffer resolution (here we set it to 720p).
 #define FB_WIDTH  1280

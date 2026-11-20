@@ -4,7 +4,7 @@
 
 #include <switch.h>
 
-//This example shows how to get NsApplicationControlData for an application, which contains nacp/icon. See libnx ns.h.
+//This example shows how to get NsApplicationControlData for an application, which contains nacp/icon. See libounce ns.h.
 
 int main(int argc, char **argv)
 {

@@ -1,4 +1,4 @@
-Hello, this is the libnx romfs example.
+Hello, this is the libounce romfs example.
 This text is being read off a file in romfs.
 
   >>Switch Homebrew is Cool<<

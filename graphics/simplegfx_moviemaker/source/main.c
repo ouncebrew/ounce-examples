@@ -4,14 +4,14 @@
 #include <string.h>
 #include <unistd.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
 #ifdef DISPLAY_IMAGE
 #include "image_bin.h"//Your own raw RGB888 1280x720 image at "data/image.bin" is required.
 #endif
 
-// See also libnx display/framebuffer.h.
+// See also libounce display/framebuffer.h.
 
 // This example shows how to use grc MovieMaker, see also grc.h (and applet.h for the requirements for using this).
 

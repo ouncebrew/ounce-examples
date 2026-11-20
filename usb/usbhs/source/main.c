@@ -4,10 +4,10 @@
 #include <string.h>
 #include <malloc.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// This example shows how to use USB devices via usbhs, see also libnx usbhs.h/usb.h.
+// This example shows how to use USB devices via usbhs, see also libounce usbhs.h/usb.h.
 // Only devices which are not used by sysmodules are usable. This example will only detect/use USB mass storage devices.
 
 // Main program entrypoint
@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
     memset(&inf_session, 0, sizeof(inf_session));
     memset(&ep_sessions, 0, sizeof(ep_sessions));
 
-    // See libnx usbhs.h regarding filtering. Flags has to be set, since [7.0.0+] doesn't allow using a filter struct which matches an existing one.
+    // See libounce usbhs.h regarding filtering. Flags has to be set, since [7.0.0+] doesn't allow using a filter struct which matches an existing one.
     filter.Flags = UsbHsInterfaceFilterFlags_bInterfaceClass;
     filter.bInterfaceClass = USB_CLASS_MASS_STORAGE;
 

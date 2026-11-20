@@ -1,6 +1,6 @@
 /* Mini SDL Demo
  * featuring SDL2 + SDL2_mixer + SDL2_image + SDL2_ttf
- * on Nintendo Switch using libnx
+ * on Nintendo Switch using libounce
  *
  * Copyright 2018 carsten1ns
  *           2020 WinterMute

@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
 // Size of the inner heap (adjust as necessary).
@@ -20,7 +20,7 @@ u32 __nx_applet_type = AppletType_None;
 u32 __nx_fs_num_sessions = 1;
 
 // Newlib heap configuration function (makes malloc/free work).
-void __libnx_initheap(void)
+void __libounce_initheap(void)
 {
     static u8 inner_heap[INNER_HEAP_SIZE];
     extern void* fake_heap_start;
@@ -61,7 +61,7 @@ void __appInit(void)
     if (R_FAILED(rc))
         diagAbortWithResult(MAKERESULT(Module_Libnx, LibnxError_InitFail_Time));
 
-    __libnx_init_time();*/
+    __libounce_init_time();*/
 
     // Disable this if you don't want to use the filesystem.
     rc = fsInitialize();

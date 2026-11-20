@@ -6,10 +6,10 @@
 #include <sys/errno.h>
 #include <unistd.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// This example shows how to use lp2p, for Switch-hosted local-network communications with mainly non-Switch devices. See also libnx lp2p.h.
+// This example shows how to use lp2p, for Switch-hosted local-network communications with mainly non-Switch devices. See also libounce lp2p.h.
 
 // Note that in an actual app you may want to use lp2p/sockets from another thread.
 
@@ -46,7 +46,7 @@ int main(int argc, char **argv)
 {
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -81,7 +81,7 @@ int main(int argc, char **argv)
 
     // See lp2p.h Lp2pGroupInfo::service_name.
 
-    char ssid[0x20] = {"libnxlp2p-"};
+    char ssid[0x20] = {"libouncelp2p-"};
     char passphrase[0x40] = {0};
     generate_random_str(&ssid[strlen(ssid)], 8);
     generate_random_str(passphrase, 16);

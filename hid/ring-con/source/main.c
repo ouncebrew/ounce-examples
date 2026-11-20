@@ -3,18 +3,18 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
 // This example shows how to use the Ring-Con which attaches to a Joy-Con (from Ring Fit Adventure).
-// See also libnx ringcon.h.
+// See also libounce ringcon.h.
 
 // Main program entrypoint
 int main(int argc, char **argv)
 {
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
         if (ready) {
             s32 total_out=0;
             RingConPollingData polldata[0x1]; // For this example we'll just read the latest entry, however if you want the rest use 0x9.
-            rc = ringconGetPollingData(&ring, polldata, 0x1, &total_out); // See libnx ringcon.h regarding ringconGetPollingData().
+            rc = ringconGetPollingData(&ring, polldata, 0x1, &total_out); // See libounce ringcon.h regarding ringconGetPollingData().
             printf(CONSOLE_ESC(4;1H)"ringconGetPollingData(): 0x%x\n", rc);
             printf("total_out=%d\n", total_out);
             for (s32 polli=0; polli<total_out; polli++) printf("[%d]: data =     %d\n", polli, polldata[polli].data);

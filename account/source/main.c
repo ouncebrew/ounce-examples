@@ -3,7 +3,7 @@
 
 #include <switch.h>
 
-//This example shows how to get info for the preselected user account. See libnx acc.h.
+//This example shows how to get info for the preselected user account. See libounce acc.h.
 
 int main(int argc, char **argv)
 {
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
         }
 
         if (R_SUCCEEDED(rc)) {
-            rc = accountProfileGet(&profile, &userdata, &profilebase);//userdata is otional, see libnx acc.h.
+            rc = accountProfileGet(&profile, &userdata, &profilebase);//userdata is otional, see libounce acc.h.
 
             if (R_FAILED(rc)) {
                 printf("accountProfileGet() failed: 0x%x\n", rc);
@@ -73,7 +73,7 @@ int main(int argc, char **argv)
 
                 printf("Nickname: %s\n", nickname);//Note that the print-console doesn't support UTF-8. The nickname is UTF-8, so this will only display properly if there isn't any non-ASCII characters. To display it properly, a print method which supports UTF-8 should be used instead.
 
-                //You can also use accountProfileGetImageSize()/accountProfileLoadImage() to load the icon for use with a JPEG library, for displaying the user profile icon. See libnx acc.h.
+                //You can also use accountProfileGetImageSize()/accountProfileLoadImage() to load the icon for use with a JPEG library, for displaying the user profile icon. See libounce acc.h.
             }
 
             accountProfileClose(&profile);

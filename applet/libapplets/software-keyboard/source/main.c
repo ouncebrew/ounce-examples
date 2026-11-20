@@ -4,10 +4,10 @@
 #include <string.h>
 #include <malloc.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// See also libnx swkbd.h.
+// See also libounce swkbd.h.
 
 // This example shows how to use the software keyboard (swkbd) LibraryApplet.
 
@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
 
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx gfx API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce gfx API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
         swkbdClose(&kbd);
     }
 
-    // The rest of this example shows how to use swkbd-inline, which can be ignored if you're not using swkbd-inline. See libnx swkbd.h.
+    // The rest of this example shows how to use swkbd-inline, which can be ignored if you're not using swkbd-inline. See libounce swkbd.h.
 
     SwkbdInline kbdinline;
     rc = swkbdInlineCreate(&kbdinline);

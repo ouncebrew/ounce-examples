@@ -27,7 +27,7 @@ include $(DEVKITPRO)/libounce/switch2_rules
 #   If not set, it attempts to use one of the following (in this order):
 #     - <Project name>.jpg
 #     - icon.jpg
-#     - <libnx folder>/default_icon.jpg
+#     - <libounce folder>/default_icon.jpg
 #
 # CONFIG_JSON is the filename of the NPDM config file (.json), relative to the project folder.
 #   If not set, it attempts to use one of the following (in this order):

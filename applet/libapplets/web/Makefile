@@ -28,7 +28,7 @@ include $(DEVKITPRO)/libounce/switch2_rules
 #   If not set, it attempts to use one of the following (in this order):
 #     - <Project name>.jpg
 #     - icon.jpg
-#     - <libnx folder>/default_icon.jpg
+#     - <libounce folder>/default_icon.jpg
 #---------------------------------------------------------------------------------
 TARGET		:=	$(notdir $(CURDIR))
 BUILD		:=	build

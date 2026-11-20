@@ -4,10 +4,10 @@
 #include <string.h>
 #include <malloc.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// See also libnx web.h.
+// See also libounce web.h.
 
 // This example shows how to use the web LibraryApplets.
 
@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
             WebCommonReply reply;
             WebExitReason exitReason=0;
 
-            // Create the config. There's a number of web*Create() funcs, see libnx web.h.
+            // Create the config. There's a number of web*Create() funcs, see libounce web.h.
             // webPageCreate/webNewsCreate requires running under a host Application which has HtmlDocument content. When the host program is an Application when using webPageCreate/webNewsCreate, and webConfigSetWhitelist is not used, the whitelist will be loaded from the content. Atmosphère hbl_html can be used to handle this.
             rc = webPageCreate(&config, "https://google.com/");
             printf("webPageCreate(): 0x%x\n", rc);

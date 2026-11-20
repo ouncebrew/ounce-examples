@@ -3,7 +3,7 @@
 
 #include <switch.h>
 
-//See also libnx set.h.
+//See also libounce set.h.
 
 int main(int argc, char **argv)
 {

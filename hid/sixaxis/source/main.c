@@ -3,7 +3,7 @@
 
 #include <switch.h>
 
-//See also libnx hid.h.
+//See also libounce hid.h.
 
 int main(int argc, char **argv)
 {

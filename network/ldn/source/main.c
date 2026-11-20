@@ -6,10 +6,10 @@
 #include <sys/errno.h>
 #include <unistd.h>
 
-// Include the main libnx system header, for Switch development
+// Include the main libounce system header, for Switch development
 #include <switch.h>
 
-// This example shows how to use ldn, for local-network communications. See also libnx ldn.h.
+// This example shows how to use ldn, for local-network communications. See also libounce ldn.h.
 // All systems in the network must be running the same hbl host Application. If any systems are running non-Application (where control.nacp loading fails), all systems must be running non-Application as well.
 
 // Note that in an actual app you may want to use ldn/sockets from another thread.
@@ -107,7 +107,7 @@ int main(int argc, char **argv)
 {
     // This example uses a text console, as a simple way to output text to the screen.
     // If you want to write a software-rendered graphics application,
-    //   take a look at the graphics/simplegfx example, which uses the libnx Framebuffer API instead.
+    //   take a look at the graphics/simplegfx example, which uses the libounce Framebuffer API instead.
     // If on the other hand you want to write an OpenGL based application,
     //   take a look at the graphics/opengl set of examples, which uses EGL instead.
     consoleInit(NULL);
@@ -138,7 +138,7 @@ int main(int argc, char **argv)
     LdnScanFilter filter={0};
 
     // In this example we just set the AdvertiseData to this string, and compare it during scanning. This is done to verify that the network belongs to this app, you can handle this with any method you want.
-    static const char advert[] = "libnx ldn example";
+    static const char advert[] = "libounce ldn example";
 
     // Load the preselected-user nickname into user_config - you can use anything for the nickname if you want.
     strncpy(user_config.user_name, "username", sizeof(user_config.user_name)-1); // Fallback username in case the below fails.

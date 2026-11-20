@@ -3,7 +3,7 @@
 
 #include <switch.h>
 
-//Example for using JIT. See also libnx jit.h.
+//Example for using JIT. See also libounce jit.h.
 
 int main(int argc, char **argv)
 {
