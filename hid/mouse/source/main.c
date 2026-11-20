@@ -15,17 +15,13 @@ int main(int argc, char* argv[])
     padConfigureInput(1, HidNpadStyleSet_NpadStandard);
     // Initialize the default gamepad (which reads handheld mode inputs as well as the first connected controller)
     PadState pad;
-    Result rc = padInitializeDefault(&pad);
-    if(R_FAILED(rc)) {
-        printf("Could not initialize Gamepad\n")
-        exit(0);
-    }
+    padInitializeDefault(&pad);
 
     // Initialize the pointer
     PadPointer pointer;
-    rc = padPointerInitialize(&pointer, 1920, 1080);
+    Result rc = padPointerInitialize(&pointer, 1920, 1080);
     if(R_FAILED(rc)) {
-        printf("Could not initialize Pointer\n")
+        printf("Could not initialize Pointer\n");
         exit(0);
     }
 
